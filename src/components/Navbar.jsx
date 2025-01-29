@@ -42,7 +42,7 @@ const Navbar = () => {
     ];
 
     return (
-        <div className="py-4 flex w-full justify-between h-20">
+        <div className="py-4 px-10 flex w-full justify-between h-20">
             <div className="flex w-full justify-between">
                 {/* Logo */}
                 <div className="flex items-center ">

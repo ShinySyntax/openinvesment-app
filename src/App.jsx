@@ -5,7 +5,7 @@ const App = () => {
 
   return (
     <div className='flex w-full bg-white dark:bg-[#265753] text-stone-900 dark:text-white'>
-        <div className='h-auto w-full px-10'>
+        <div className='h-auto w-full'>
           <Outlet />
         </div>
     </div>
