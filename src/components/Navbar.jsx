@@ -42,7 +42,7 @@ const Navbar = () => {
     ];
 
     return (
-        <div className="py-4 px-10 flex w-full justify-between h-20">
+        <div className="py-4 sm:px-10 flex w-full justify-between h-20">
             <div className="flex w-full justify-between">
                 {/* Logo */}
                 <div className="flex items-center ">
@@ -53,12 +53,12 @@ const Navbar = () => {
                     {/* Navigation Links */}
                     <ul className="hidden md:flex w-full justify-between items-center text-[15px] font-bold">
                         {links.map((link) => (
-                            <li key={link.path} className={`w-24 h-10 flex justify-center items-center  rounded-[7px] ${
+                            <li key={link.path} >
+                                <Link className={`w-24 transition h-10 flex justify-center items-center  rounded-[7px] ${
                                 location.pathname === link.path
                                     ? "bg-[#146f68] text-white"
-                                    : "hover:bg-[#146f68] text-black dark:text-white"
-                            }`}>
-                                <Link
+                                    : "hover:bg-[#146f68] hover:text-white text-black dark:text-white"
+                            }`}
                                     to={link.path}
                                 >
                                     {link.label}
@@ -91,22 +91,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Right Section */}
-                <div className="flex items-center">
-                    {/* Theme Toggle */}
-                    {/* <button
-                        id="theme-toggle"
-                        aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-                        className="rounded-full shadow-toggle dark:shadow-none bg-primary-800 dark:bg-transparent dark:text-[#6F767E]"
-                        onClick={toggleTheme}
-                    >
-                        <div className="w-6 h-6 m-1 flex items-center gap-2">
-                            {theme === "dark" ? (
-                                <ReactSVG src="/icons/moon.svg" />
-                            ) : (
-                                <ReactSVG src="/icons/sun.svg" />
-                            )}
-                        </div>
-                    </button> */}
+                <div className="flex items-center sm:mr-0 mr-3">
 
                     {/* Modal and Connect Wallet */}
                     <ConnectWallet />
@@ -115,17 +100,17 @@ const Navbar = () => {
 
             {/* Mobile Navigation */}
             <div
-                className={`md:hidden fixed z-30 w-full flex justify-center items-center rounded-b-md bg-blue-900 shadow-[0_20px_40px_20px_rgb(0,0,0,.3)] transition-all duration-500 ${
-                    hamburger ? "translate-y-[70px]" : "-translate-y-[300px]"
+                className={`md:hidden fixed z-30 w-full flex justify-start items-center rounded-b-md bg-white shadow-[0_20px_40px_20px_rgb(0,0,0,.3)] transition-all duration-500 ${
+                    hamburger ? "translate-y-[60px]" : "-translate-y-[300px]"
                 }`}
             >
-                <ul className="w-auto h-auto py-4 px-2 my-auto mx-0 outline-4">
+                <ul className="w-auto h-auto py-4 px-6 my-auto mx-0 outline-4">
                     {links.map((link) => (
                         <li key={link.path}>
                             <Link
                                 to={link.path}
                                 onClick={() => setHamburger(false)}
-                                className="rounded-md py-2 block font-medium text-white border-[1px] border-transparent hover:border-white transition-all duration-200 cursor-pointer"
+                                className="rounded-md py-2 block font-medium text-black border-[1px] border-transparent hover:border-white transition-all duration-200 cursor-pointer"
                             >
                                 {link.label}
                             </Link>

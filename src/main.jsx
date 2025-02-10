@@ -6,10 +6,12 @@ import Buy from './pages/Buy';
 import Sell from './pages/Sell';
 import Swap from './pages/Swap';
 import Account from './pages/Account';
+import TransactionHistory from './pages/TransactionHistory';
 import Guide from './pages/Guide';
 import './index.css';
 import { IdentityKitProvider } from '@nfid/identitykit/react';
 import '@nfid/identitykit/react/styles.css';
+import ActionProMode from './pages/ActionProMode';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -27,6 +29,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="swap" element={<Swap />} />
             <Route path="account" element={<Account />} />
             <Route path="guide" element={<Guide />} />
+            <Route path="transaction-history" element={<TransactionHistory />} />
+            <Route path="action-pro-mode" element={<ActionProMode />} />
           </Route>
         </Routes>
       </BrowserRouter>

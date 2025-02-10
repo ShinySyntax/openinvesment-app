@@ -13,6 +13,11 @@ module.exports = {
           xl: "1280px",
       },
   },
+  extend: {
+    fontFamily: {
+      inter: ['Inter', 'sans-serif'],
+    },
+  },
   },
   plugins: [],
 }
